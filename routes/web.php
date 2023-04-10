@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('product');
 });
+
+Route::get('/product', [ProductController::class, 'index']);
+
+Route::get('/details/{judul}', [ProductController::class, 'deskripsi']);
